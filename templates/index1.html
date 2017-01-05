@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/a.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/b.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+            <a class="navbar-brand" href="">Авторизация</a>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Вернуться</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</div>
+    <form method="post" >{% csrf_token %}
+        <div class="form-group">
+        {% for el in errors %}
+        <div>
+            <strong>{{ el }}</strong>
+        </div>
+        {% endfor %}
+        </div>
+        <p><label>Логин:
+        <input type="text" name="username" value="{{ username }}">
+        </label></p>
+        <p><label> Пароль:
+        <input type="text" name="password">
+        </label></p>
+        <button type="submit">Войти</button>
+    </form>
+
+</body>
+</html>

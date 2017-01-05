@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+<body>
+
+ {% for Comment in Comments %}
+ <p>Название курса-{{ Comment.Course }}<br>
+    Отзыв-{{ Comment.Text }}<br>
+ </p>
+
+ <hr/>
+ {% endfor %}
+<html>
+ <body>
+  <form action="http://127.0.0.1:8000">
+   <button>
+       <img src="{% static 'css/unnamed.png' %}" width="25" height="25" alt="" style="">
+       Главная страница
+   </button></p>
+  </form>
+ </body>
+</html>
+</body>
+</html>

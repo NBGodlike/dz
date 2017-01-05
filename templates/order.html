@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Страница курса {{  orders.id }}{% endblock %}
+
+{% block content %}
+
+    {% for Course in Courses %}
+ <p>Название курса-{{ Course.Duration }}<br>
+    Длительность курса-{{ Course.Name }}<br>
+    Преподаватель-{{ Course.Teacher }}<br>
+    Стоимость курса-{{ Course.Value }}<br>
+ </p>
+
+ <hr/>
+ {% endfor %}
+
+{% endblock %}

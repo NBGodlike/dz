@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/a.css' %}">
+    <style>
+        .layer1 {
+        float: left; /* Обтекание по правому краю */
+        margin-right: 20px;
+        }
+    </style>
+    <style>
+        .layer2 {
+         /* Обтекание по правому краю */
+        margin-left: 450px;
+        }
+    </style>
+    <style>
+        #id_Name,#id_Duration,#id_Teacher,#id_Value {
+        width: 150px;
+        height: 26px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/b.css' %}">
+    <title>Новый курс</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+            <a class="navbar-brand" href="">Новый курс</a>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a class="active" href="/">Курсы</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <IMG SRC="{{ Course.Picture.url }}">
+        {{ form.as_p }}
+​        <button type="submit">Создать</button>
+    </form>

@@ -1,0 +1,25 @@
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <body bgcolor="#c0c0c0">
+
+    <div class="reg_login_container clearfix">
+        <h1>Welcome</h1>
+        <div class="login_block clearfix">
+            <h5 class="block_name">Log in</h5>
+            <form method="POST" name="login_form" class="clearfix"
+            id="login_form">
+                {% csrf_token %}
+                {{ login_form }}
+                <div id="login_user">Log in</div>
+            </form>
+        </div>
+    </div>
+    </body>
+{% endblock %}
+
+</html>
